@@ -1,73 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SwiggOS — AI delivery, forged at PortSwigger</title>
-  <meta name="description" content="SwiggOS: the operating system for AI opportunities and two-week delivery sprints at PortSwigger. Internal demo.">
-  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-  <link rel="stylesheet" href="css/app.css">
-</head>
-<body>
-  <div class="shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
-          <rect x="1" y="1" width="30" height="30" rx="7" fill="#ff6633"/>
-          <path d="M7 11h18v3.5h-6.5c0 2.4 1.8 4.2 4.5 4.8v2.2h-4.5L17 25h-7l-1.5-3.5H7v-2.2c3.6-.4 5.5-2.4 5.5-4.8H7z" fill="#17130f"/>
-        </svg>
-        <div>
-          <div class="name">Swigg<em>OS</em></div>
-          <div class="tag">The AI-native delivery OS</div>
+---
+layout: default
+---
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-t-12">
+            <div class="row">
+                {% for post in paginator.posts %}
+                    {% include post-card.html %}
+                {% endfor %}
+            </div>
+            {% include pagination.html %}
         </div>
-      </div>
-      <nav class="nav" id="nav"></nav>
-      <div class="demo-note">
-        Internal demo with fictional data. Every figure is labelled
-        <span class="basis measured">measured</span>, <span class="basis estimated">estimated</span> or
-        <span class="basis projected">projected</span>.
-      </div>
-    </aside>
-    <div class="sidebar-scrim" id="scrim"></div>
-
-    <div class="main">
-      <header class="topbar">
-        <button class="hamburger" id="hamburger" aria-label="Open navigation">☰</button>
-        <span class="crumb" id="crumb">Dashboard</span>
-        <span class="spacer"></span>
-        <div class="demo-strip" title="Demo controls">
-          <label class="switch" title="Simulate backend failures (tests error/recovery states)">
-            <input type="checkbox" id="failure-sim"><i></i>
-          </label>
-          <span id="failure-sim-label">Failure sim</span>
-          <button class="btn sm ghost" id="reset-demo" title="Reset demo data to seed">Reset data</button>
-        </div>
-        <div class="role-switch">
-          <span class="avatar" id="avatar">?</span>
-          <select id="user-switch" aria-label="Switch active user (demo)"></select>
-        </div>
-      </header>
-      <main class="content" id="view" tabindex="-1"></main>
     </div>
-  </div>
-
-  <div class="toasts" id="toasts"></div>
-
-  <script src="js/util.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/store.js"></script>
-  <script src="js/charts.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/views/dashboard.js"></script>
-  <script src="js/views/requests.js"></script>
-  <script src="js/views/backlog.js"></script>
-  <script src="js/views/sprints.js"></script>
-  <script src="js/views/impact.js"></script>
-  <script src="js/views/adoption.js"></script>
-  <script src="js/views/assets.js"></script>
-  <script src="js/views/radar.js"></script>
-  <script src="js/views/reports.js"></script>
-  <script src="js/views/governance.js"></script>
-  <script>App.start();</script>
-</body>
-</html>
+</div>
